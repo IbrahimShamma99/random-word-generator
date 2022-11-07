@@ -1,9 +1,28 @@
 import constructList from "./words";
 import { WordsOptions, WordsList } from './options';
+import { defaultOpts } from './options';
 
-const wordList: WordsList = constructList();
+const fillNotfilled = (opts: WordsOptions) => {
+  const options = { ...opts };
+  if (!opts.maxLength) {
+    options.maxLength = defaultOpts.maxLength;
+  }
+  if (!opts.max) {
+    options.max = defaultOpts.max;
+  }
+  if (!opts.min) {
+    options.min = defaultOpts.min;
+  }
+  return options;
+}
 
-function words(options: WordsOptions): string[] {
+
+function words(opts: WordsOptions = defaultOpts): string {
+
+
+  const options: WordsOptions = fillNotfilled(opts);
+
+  const wordList: WordsList = constructList();
 
   function word() {
     if (options && options.maxLength > 1) {
@@ -25,22 +44,17 @@ function words(options: WordsOptions): string[] {
     return wordUsed;
   }
 
-  function generateRandomWord() {
-    return wordsList[randInt(wordsList.length)];
+  function generateRandomWord(): string {
+    return wordList[randInt(wordList.length)];
   }
 
-  function randInt(lessThan) {
+  function randInt(lessThan): number {
     return Math.floor(Math.random() * lessThan);
   }
 
   // No arguments = generate one word
   if (typeof options === "undefined") {
     return word();
-  }
-
-  // Just a number = return that many words
-  if (typeof options === "number") {
-    options = { exactly: options };
   }
 
   // options supported: exactly, min, max, join
@@ -65,7 +79,7 @@ function words(options: WordsOptions): string[] {
   }
 
   var total = options.min + randInt(options.max + 1 - options.min);
-  var results = [];
+  var results: string[] = [];
   var token = "";
   var relativeIndex = 0;
 
@@ -82,11 +96,8 @@ function words(options: WordsOptions): string[] {
       relativeIndex = 0;
     }
   }
-  if (typeof options.join === "string") {
-    results = results.join(options.join);
-  }
 
-  return results;
+  return results.join(options.join);
 }
 
 export default words;

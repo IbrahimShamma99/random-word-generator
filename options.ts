@@ -1,8 +1,8 @@
 export type WordsOptions = {
-    min?: number;
-    max?: number;
+    min: number;
+    max: number;
     exactly?: number;
-    maxLength?: number;
+    maxLength: number;
     wordsPerString?: number;
     separator?: string;
     join: string;
@@ -10,3 +10,6 @@ export type WordsOptions = {
 };
 
 export type WordsList = string[];
+
+
+export const defaultOpts = {maxLength: 10, join: "-", min: 2, max: 5};
