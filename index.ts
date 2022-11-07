@@ -17,7 +17,7 @@ const fillNotfilled = (opts: WordsOptions) => {
 }
 
 
-function words(opts: WordsOptions = defaultOpts): string {
+function randWordsGen(opts: WordsOptions = defaultOpts): string {
 
 
   const options: WordsOptions = fillNotfilled(opts);
@@ -100,4 +100,4 @@ function words(opts: WordsOptions = defaultOpts): string {
   return results.join(options.join);
 }
 
-export default words;
+export default randWordsGen;

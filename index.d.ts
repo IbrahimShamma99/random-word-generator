@@ -1,5 +1,5 @@
 import { WordsOptions } from './options';
 
-declare function words(options: WordsOptions): string[];
+declare function randWordsGen(options: WordsOptions): string[];
 
-export default words;
+export default randWordsGen;
