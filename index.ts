@@ -24,7 +24,7 @@ function words(opts: WordsOptions = defaultOpts): string {
 
   const wordList: WordsList = constructList();
 
-  function word() {
+  function word(): string {
     if (options && options.maxLength > 1) {
       return generateWordWithMaxLength();
     } else {
@@ -32,9 +32,9 @@ function words(opts: WordsOptions = defaultOpts): string {
     }
   }
 
-  function generateWordWithMaxLength() {
+  function generateWordWithMaxLength(): string {
     var rightSize = false;
-    var wordUsed;
+    var wordUsed = "";
     while (!rightSize) {
       wordUsed = generateRandomWord();
       if (wordUsed.length <= options.maxLength) {
@@ -48,7 +48,7 @@ function words(opts: WordsOptions = defaultOpts): string {
     return wordList[randInt(wordList.length)];
   }
 
-  function randInt(lessThan): number {
+  function randInt(lessThan: number): number {
     return Math.floor(Math.random() * lessThan);
   }
 
