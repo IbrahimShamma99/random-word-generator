@@ -1,5 +1,21 @@
-// import { WordsOptions, WordsList } from './options';
-import { defaultOpts, WordsOptions, WordsList } from './index.d';
+type WordsOptions = {
+  min: number;
+  max: number;
+  exactly?: number;
+  maxLength: number;
+  wordsPerString?: number;
+  separator?: string;
+  join: string;
+  formatter?: (word: string, index: number) => string;
+};
+
+type WordsList = string[];
+
+
+const defaultOpts = {maxLength: 10, join: "-", min: 2, max: 5};
+
+
+
 
 const fillNotfilled = (opts: WordsOptions) => {
   const options = { ...opts };
