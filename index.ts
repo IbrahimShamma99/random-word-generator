@@ -3,7 +3,7 @@ import { WordsOptions, WordsList } from './options';
 
 const wordList: WordsList = constructList();
 
-function words(options: JoinedWordsOptions | WordsOptions | number): string[] | string { // 
+function words(options: WordsOptions): string[] {
 
   function word() {
     if (options && options.maxLength > 1) {
