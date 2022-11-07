@@ -1,6 +1,10 @@
-import words from "./words";
+import constructList from "./words";
+import { WordsOptions, WordsList } from './options';
 
-function words(options) {
+const wordList: WordsList = constructList();
+
+function words(options: JoinedWordsOptions | WordsOptions | number): string[] | string { // 
+
   function word() {
     if (options && options.maxLength > 1) {
       return generateWordWithMaxLength();
@@ -22,7 +26,7 @@ function words(options) {
   }
 
   function generateRandomWord() {
-    return wordList[randInt(wordList.length)];
+    return wordsList[randInt(wordsList.length)];
   }
 
   function randInt(lessThan) {
@@ -85,6 +89,4 @@ function words(options) {
   return results;
 }
 
-module.exports = words;
-// Export the word list as it is often useful
-words.wordList = wordList;
+export default words;
