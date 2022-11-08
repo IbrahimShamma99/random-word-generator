@@ -1,3 +1,6 @@
+
+
+
 type WordsOptions = {
   min: number;
   max: number;
@@ -13,8 +16,6 @@ type WordsList = string[];
 
 
 const defaultOpts = {maxLength: 10, join: "-", min: 2, max: 5};
-
-
 
 
 const fillNotfilled = (opts: WordsOptions) => {

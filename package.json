@@ -2,10 +2,10 @@
   "name": "random-word-generator-2",
   "version": "1.0.5",
   "description": "Generate Random Naming, mostly into naming backend Entities",
-  "main": "index.ts",
-  "types": "index.d.ts",
-  "type": "module",
-  "scripts": {},
+  "main": "index.js",
+  "scripts": {
+    "build" : "tsc"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:IbrahimShamma99/random-word-generator.git"
@@ -22,7 +22,8 @@
   "author": "Ibra",
   "license": "MIT",
   "devDependencies": {
-    "ts-mocha": "^10.0.0"
+    "ts-mocha": "^10.0.0",
+    "typescript": "^4.8.4"
   },
   "dependencies": {
     "@rollup/plugin-babel": "^6.0.2"
