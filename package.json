@@ -1,16 +1,18 @@
 {
-  "name": "random-word-generator-2",
+  "name": "random-word-generator-ts",
   "version": "1.0.5",
   "description": "Generate Random Naming, mostly into naming backend Entities",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build" : "tsc"
+    "prepublish": "tsc --project ./"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com:IbrahimShamma99/random-word-generator.git"
   },
   "keywords": [
+    "ts",
     "random",
     "words",
     "words",
