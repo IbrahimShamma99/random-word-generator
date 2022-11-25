@@ -1,6 +1,6 @@
 {
   "name": "random-word-generator-ts",
-  "version": "1.0.5",
+  "version": "1.0.0",
   "description": "Generate Random Naming, mostly into naming backend Entities",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
